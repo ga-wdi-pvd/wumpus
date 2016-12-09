@@ -9,7 +9,8 @@ module Wumpus
 
     def add(things)
       # puts "There are ${things} in the room!"
-      @number
+      @things = things
+      # put a hazard in the room 
     end
 
     def remove(thing)
