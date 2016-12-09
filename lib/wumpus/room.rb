@@ -1,25 +1,26 @@
 module Wumpus
   class Room
     def initialize(number)
-      raise NotImplementedError, "See lib/wumpus/room.rb"
+      @number = number
     end
 
     attr_reader :number, :neighbors
 
     def add(thing)
-      raise NotImplementedError, "See lib/wumpus/room.rb"
+      self.add(:bats)
     end
 
     def remove(thing)
-      raise NotImplementedError, "See lib/wumpus/room.rb"
+      room.remove(:bats)
     end
 
     def has?(thing)
-      raise NotImplementedError, "See lib/wumpus/room.rb"
+      assert room.has?(:wumpus)
+      assert room.has?(:bats)
     end
 
     def empty?
-      raise NotImplementedError, "See lib/wumpus/room.rb"
+      refute room.empty?
     end
 
     def safe?
@@ -31,7 +32,7 @@ module Wumpus
     end
 
     def exits
-      raise NotImplementedError, "See lib/wumpus/room.rb"
+      room.exits.must_equal(exit_numbers)
     end
 
     def neighbor(number)
